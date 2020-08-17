@@ -1,0 +1,82 @@
+<style>
+    #main{
+      padding: 20;
+    width: 305px;
+    border: 2px sold;
+    border: 11px solid red;
+    height: 200px;
+    text-align: center;
+
+    }  
+#secondary{
+
+
+      padding: 20;
+    width: 200px;
+    border: 2px sold;
+    border: 11px solid yellow;
+    height: 150px;
+    text-align: center;
+    margin-left: -26px;
+
+     
+}
+</style>
+<script>
+var md = document.addEventListener("mousedown",onmousedown);
+function changeColor(newColor) {
+  elem = document.elementFromPoint(2, 2);
+ 
+  console.log(elem.id)
+  elem.style.color = newColor;
+}
+
+
+function onmousedown(md){
+    var pageX = md.pageX;
+    var pageY = md.pageY;
+    console.log(pageX,pageY);
+    var parent = document.elementFromPoint(pageX, pageY)
+   // console.log("Clicked on",parent,"mouse position", pageX, pageY)
+    console.log("target Element",md.target.tagName);
+    //resize(newElement,startX,startY);
+console.log("target Element",md.target.tagName);
+console.log("parentID",parent.id); 
+    //createElement(md,pageX,pageY,parent);
+}
+
+// function resize(newElement,startX,startY){
+//    // console.log("new element recived", newElement);
+//     var mm = window.addEventListener("mousemove", onmouseMove);
+//        function onmouseMove(mm){
+//         var mouseOn = mm.target.tagName;
+//         console.log("mouseon", mouseOn)
+//         var mouseX = mm.pageX;
+//         var mouseY = mm.pageY;
+//         newElement.style.width = mouseX - startX + "px";
+//         newElement.style.height =  mouseY - startY + "px";
+      
+//        window.addEventListener("mouseup", onMouseup);
+
+//         function onMouseup() {
+//             window.removeEventListener("mousemove", onmouseMove);
+//             console.log("listeners removed")
+//             window.removeEventListener("mouseup", onMouseup);
+//           }            
+//     }
+
+  
+// }
+
+
+
+
+</script>
+<p id="para1">Some text here</p>
+<div id = "main" class= "main">
+  <div id ="secondary"> 
+    <button onclick="changeColor('blue');">Blue</button>
+<button onclick="changeColor('red');">Red</button>
+  </div>
+
+</div>
